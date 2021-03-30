@@ -1,6 +1,17 @@
+locals {
+  provision_namespace = var.provision_namespace
+}
+
+resource "ibm_function_namespace" "function_namespace" {
+  count = provision_namespace ? 1 : 0
+  name = var.namespace_name
+  description = ( var.namespace_description != null ? var.namespace_description : null )
+  resource_group_id = var.resource_group_id
+}
+
 resource "ibm_function_action" "function_action" {
-  name         = var.name
-  namespace    = var.namespace
+  name         = var.action_name
+  namespace    = var.namespace_name
   dynamic "limits" {
     for_each = ( var.limits != null ? var.limits : null )
     content {

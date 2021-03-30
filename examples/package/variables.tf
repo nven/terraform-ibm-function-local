@@ -1,10 +1,5 @@
-variable "name" {
+variable "package_name" {
   description = "Name of package."
-  type        = string
-}
-
-variable "namespace" {
-  description = "IBM Cloud function namespace."
   type        = string
 }
 
@@ -30,4 +25,25 @@ variable "bind_package_name" {
   description = "Name of package to be binded."
   type        = string
   default = null
+}
+
+variable "namespace_name" {
+  description = "Name of namespace."
+  type        = string
+}
+
+variable "namespace_description" {
+  description = "Namespace Description."
+  type        = string
+  default = null
+}
+
+variable "resource_group_name" {
+  description = "Resource Group Name."
+  type        = string
+}
+
+variable "provision_namespace" {
+  description = "Provision Namespace"
+  type        = bool
 }

@@ -6,8 +6,8 @@
 /****************************************************
 Example Usage 
 //mandatory variables 
-name = "package-name"
-namespace = "function-namespace-name"
+package_name = "package-name"
+namespace_name = "function-namespace-name"
 
 // optional variables
 

@@ -9,7 +9,7 @@ variable "description" {
   default = null
 }
 
-variable "resource_group_id" {
-  description = "Resource Group ID."
+variable "resource_group_name" {
+  description = "Resource Group name."
   type        = string
 }

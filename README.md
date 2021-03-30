@@ -19,12 +19,17 @@ Full examples are in the [examples](./examples/) folder, but basic usage is as f
 provider "ibm" {
 }
 
+data "ibm_resource_group" "resource_group" {
+  name = var.resource_group_name
+}
+
 module "namespace" {
   source  = "terraform-ibm-modules/function/ibm//modules/namespace"
 
-  name         = var.name
-  tags         = var.tags
-  description  = var.description
+  name              = var.name
+  tags              = var.tags
+  description       = var.description
+  resource_group_id = data.ibm_resource_group.resource_group.id
 }
 
 ```
@@ -35,11 +40,17 @@ Creating action:
 provider "ibm" {
 }
 
+data "ibm_resource_group" "resource_group" {
+  name = var.resource_group_name
+}
+
 module "action" {
   source = "./terraform-ibm-function/function/ibm//modules/action"
 
-  name = var.name
-  namespace = var.namespace
+  action_name         = var.action_name
+  namespace_name      = var.namespace_name
+  provision_namespace = true
+  resource_group_id   = data.ibm_resource_group.resource_group.id
   
   exec = [{
     main = var.main

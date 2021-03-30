@@ -8,12 +8,12 @@ Example Usage
 
 name = "namespace-name"
 description = "sample-namepspace"
-resource_group_id = "65350e75391b45e48bbc489881419de9"
+resource_group_name = "default"
 
 ******************************************************/
 
 name = "<namespace_name>"
-resource_group_id = "<resource_group_id>"
+resource_group_name = "<resource_group_name>"
 
 
 

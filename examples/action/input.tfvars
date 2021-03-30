@@ -6,8 +6,8 @@
 /****************************************************
 Example Usage 
 //mandatory variables 
-name = "action-name"
-namespace = "function-namespace-name"
+action_name = "action-name"
+namespace_name = "function-namespace-name"
 
 // optional variables
 exec = [{
@@ -45,8 +45,8 @@ user_defined_annotations = <<EOF
 EOF
 ******************************************************/
 
-name = "<action_name>"
-namespace = "<namespace_name>"
+action_name = "<action_name>"
+namespace_name = "<namespace_name>"
 
 exec = [{
   main = "<name_of_main_function>"

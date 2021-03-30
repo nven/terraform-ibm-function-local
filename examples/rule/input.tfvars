@@ -6,15 +6,15 @@
 /****************************************************
 Example Usage 
 
-name = "package-name"
-namespace = "function-namespace-name"
+rule_name = "package-name"
+namespace_name = "function-namespace-name"
 trigger_name = "trigger-name"
 action_name = "action-name"
 
 ******************************************************/
 
-name = "<package_name>"
-namespace = "<namespace_name>"
+rule_name = "<package_name>"
+namespace_name = "<namespace_name>"
 trigger_name = "<trigger_name>"
 action_name = "<action_name>"
 

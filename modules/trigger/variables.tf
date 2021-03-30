@@ -1,10 +1,5 @@
-variable "name" {
+variable "trigger_name" {
   description = "Name of Trigger."
-  type        = string
-}
-
-variable "namespace" {
-  description = "IBM Cloud function namespace."
   type        = string
 }
 
@@ -27,4 +22,25 @@ variable "user_defined_parameters" {
   description = "Parameters values in KEY VALUE format. Parameter bindings included in the context passed to the trigger."
   type        = string
   default = null
+}
+
+variable "namespace_name" {
+  description = "Name of namespace."
+  type        = string
+}
+
+variable "namespace_description" {
+  description = "Namespace Description."
+  type        = string
+  default = null
+}
+
+variable "resource_group_id" {
+  description = "Resource Group ID."
+  type        = string
+}
+
+variable "provision_namespace" {
+  description = "Provision Namespace"
+  type        = bool
 }

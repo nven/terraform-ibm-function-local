@@ -6,11 +6,17 @@
 provider "ibm" {
 }
 
+data "ibm_resource_group" "resource_group" {
+  name = var.resource_group_name
+}
+
 module "action" {
   source = "terraform-ibm-modules/function/ibm//modules/action"
 
-  name                      = var.name
-  namespace                 = var.namespace
+  action_name               = var.action_name
+  namespace_name            = var.namespace_namespace
+  provision_namespace       = var.provision_namespace
+  resource_group_id         = data.ibm_resource_group.resource_group.id
   exec                      = var.exec
   limits                    = var.limits
   publish                   = var.publish

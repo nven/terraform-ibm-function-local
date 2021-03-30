@@ -5,10 +5,17 @@ This module is used to create a package
 ## Example Usage
 ```
 
+data "ibm_resource_group" "resource_group" {
+  name = var.resource_group
+}
+
 module "package" {
   source = "terraform-ibm-modules/function/ibm//modules/package"
 
-  name = var.name
+  namespace_name = var.namespace_name
+  provision_namespace = true
+  resource_group_id = data.ibm_resource_group.resource_group.id
+  package_name = var.package_name
   namespace = var.namespace
   publish = var.publish
   user_defined_annotations = var.user_defined_annotations
@@ -23,8 +30,11 @@ module "package" {
 
 | Name                              | Description                                           | Type   | Default | Required |
 |-----------------------------------|-------------------------------------------------------|--------|---------|----------|
-| name | The name of namespace | string | n/a | yes |
-| namespace | The namespace of the package  | string | n/a | yes |
+| provision_namespace| Option whether to provision namespace | boolean | n/a | yes |
+| namespace_name | Namespace to which the rule is attached | string | n/a | yes |
+| namespace_description | Namespace Description | string | n/a | no |
+| resource\_group\_id | ID of the resource group | string | n/a | yes |
+| package_name | The name of namespace | string | n/a | yes |
 | publish | Package visibility | string | n/a | no |
 | user\_defined\_annotations | Annotation values in KEY VALUE format | string | n/a | no |
 | user\_defined\_parameters | Parameters values in KEY VALUE format. Parameter bindings included in the context passed to the package. | string | n/a | no |
