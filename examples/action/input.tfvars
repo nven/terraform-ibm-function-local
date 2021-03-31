@@ -47,6 +47,9 @@ EOF
 
 action_name = "<action_name>"
 namespace_name = "<namespace_name>"
+provision_namespace = true
+package_name = "<package_name>"
+create_package = true
 
 exec = [{
   main = "<name_of_main_function>"

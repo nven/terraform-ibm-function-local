@@ -64,3 +64,14 @@ variable "provision_namespace" {
   description = "Provision Namespace"
   type        = bool
 }
+
+variable "create_package" {
+  description = "Option whether to create a new package"
+  type        = bool
+}
+
+variable "package_name" {
+  description = "Package Name"
+  type        = string
+}
+

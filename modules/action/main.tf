@@ -1,5 +1,6 @@
 locals {
   provision_namespace = var.provision_namespace
+  create_package = var.create_package
 }
 
 resource "ibm_function_namespace" "function_namespace" {
@@ -9,8 +10,17 @@ resource "ibm_function_namespace" "function_namespace" {
   resource_group_id = var.resource_group_id
 }
 
+resource "ibm_function_package" "function_package" {
+  count = create_package ? 1 : 0
+  name         = var.package_name
+  namespace    = var.namespace_name
+  publish = false
+  user_defined_annotations = []
+  user_defined_parameters  = []
+}
+
 resource "ibm_function_action" "function_action" {
-  name         = var.action_name
+  name         = (var.package_name != null ?  var.package_name + "/" + var.action_name : var.action_name )
   namespace    = var.namespace_name
   dynamic "limits" {
     for_each = ( var.limits != null ? var.limits : null )

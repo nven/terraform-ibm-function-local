@@ -16,6 +16,8 @@ module "action" {
   action_name               = var.action_name
   namespace_name            = var.namespace_namespace
   provision_namespace       = var.provision_namespace
+  create_package            = var.create_package
+  package_name              = var.package_name
   resource_group_id         = data.ibm_resource_group.resource_group.id
   exec                      = var.exec
   limits                    = var.limits
