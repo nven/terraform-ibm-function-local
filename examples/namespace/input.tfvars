@@ -9,6 +9,7 @@ Example Usage
 name = "namespace-name"
 description = "sample-namepspace"
 resource_group_name = "default"
+action = "create"
 
 ******************************************************/
 

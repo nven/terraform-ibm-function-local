@@ -17,19 +17,19 @@ variable "exec" {
 variable "publish" {
   description = "Action visibilty."
   type        = bool
-  default = null
+  default     = null
 }
 
 variable "user_defined_annotations" {
   description = "Annotation values in KEY VALUE format."
   type        = string
-  default = null
+  default     = null
 }
 
 variable "user_defined_parameters" {
   description = "Parameters values in KEY VALUE format. Parameter bindings included in the context passed to the package."
   type        = string
-  default = null
+  default     = null
 }
 
 variable "namespace_name" {
@@ -40,7 +40,7 @@ variable "namespace_name" {
 variable "namespace_description" {
   description = "Namespace Description."
   type        = string
-  default = null
+  default     = null
 }
 
 variable "resource_group_name" {
@@ -51,6 +51,7 @@ variable "resource_group_name" {
 variable "provision_namespace" {
   description = "Provision Namespace"
   type        = bool
+  default     = false
 }
 
 variable "create_package" {
@@ -61,5 +62,6 @@ variable "create_package" {
 variable "package_name" {
   description = "Package Name"
   type        = string
+  default     = null
 }
 

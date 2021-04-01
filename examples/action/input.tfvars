@@ -17,6 +17,12 @@ exec = {
 
 // optional variables
 
+provision_namespace = false
+
+package_name = "mypackage"
+
+create_package = true
+
 limits = [{
   timeout = "300000"
   log_size = "2048"

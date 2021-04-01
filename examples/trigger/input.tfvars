@@ -6,8 +6,12 @@
 /****************************************************
 Example Usage 
 
-name = "trigger-name"
-namespace = "function-namespace-name"
+resource_group_name = "default"
+
+namespace_name = "function-namespace-name"
+provision_namespace = true
+
+trigger_name = "trigger-name"
 
 feed = [{
   name = "/whisk.system/alarms/alarm"
@@ -39,8 +43,12 @@ EOF
 
 ******************************************************/
 
-name = "<trigger_name>"
-namespace = "<namespace_name>"
+resource_group_name = "<resource_group_name>"
+
+namespace_name = "<namespace_name>"
+
+rule_name = "<trigger_name>"
+
 feed = [{
   name = "<feed>"
   parameters =[{

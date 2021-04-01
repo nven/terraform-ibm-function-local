@@ -14,8 +14,8 @@ This example illustrates how to use the `package` module.
 | resource\_group\_name | Name of the resource group | string | n/a | yes |
 | package_name | The name of namespace | string | n/a | yes |
 | publish | Package visibility | string | n/a | no |
-| user\_defined\_annotations | Annotation values in KEY VALUE format | string | n/a | no |
-| user\_defined\_parameters | Parameters values in KEY VALUE format. Parameter bindings included in the context passed to the package. | string | n/a | no |
+| user\_defined\_annotations | Annotation values in KEY VALUE format | string | "[]" | no |
+| user\_defined\_parameters | Parameters values in KEY VALUE format. Parameter bindings included in the context passed to the package. | string | "[]" | no |
 | bind_package_name | Name of package to be binded. | string | n/a | no |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

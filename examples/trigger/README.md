@@ -14,8 +14,15 @@ This example illustrates how to use the `trigger` module.
 | resource\_group\_name | Name of the resource group | string | n/a | yes |
 | trigger_name | The name of rule | string | n/a | yes |
 | feed | Trigger feed | list(object{<br>name = string<br>parameters = string}) | n/a | no |
-| user\_defined\_annotations | Annotation values in KEY VALUE format. | string | n/a | no |
-| user\_defined\_parameters | Parameters values in KEY VALUE format. Parameter bindings included in the context passed to the trigger. | string | n/a | no |
+| user\_defined\_annotations | Annotation values in KEY VALUE format. | string | "[]" | no |
+| user\_defined\_parameters | Parameters values in KEY VALUE format. Parameter bindings included in the context passed to the trigger. | string | "[]" | no |
+
+## feed variable inputs
+
+| Name                              | Description                                           | Type   | Default | Required |
+|-----------------------------------|-------------------------------------------------------|--------|---------|----------|
+| name| Trigger Feed ACTION_NAME | string | n/a | yes |
+| parameters| Parameters definitions in key value format. Parameter bindings are included in the context and passed when the action is invoked. | string | "[]" | no |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

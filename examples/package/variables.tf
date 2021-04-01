@@ -46,4 +46,5 @@ variable "resource_group_name" {
 variable "provision_namespace" {
   description = "Provision Namespace"
   type        = bool
+  default     = false
 }

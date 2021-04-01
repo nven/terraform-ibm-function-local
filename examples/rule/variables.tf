@@ -21,7 +21,7 @@ variable "namespace_name" {
 variable "namespace_description" {
   description = "Namespace Description."
   type        = string
-  default = null
+  default     = null
 }
 
 variable "resource_group_name" {
@@ -32,5 +32,6 @@ variable "resource_group_name" {
 variable "provision_namespace" {
   description = "Provision Namespace"
   type        = bool
+  default     = false
 }
 

@@ -6,8 +6,13 @@
 /****************************************************
 Example Usage 
 //mandatory variables 
-package_name = "package-name"
+
+resource_group_name = "default"
+
 namespace_name = "function-namespace-name"
+provision_namespace = true
+
+package_name = "package-name"
 
 // optional variables
 
@@ -34,6 +39,9 @@ user_defined_annotations = <<EOF
 EOF
 ******************************************************/
 
-name = "<package_name>"
-namespace = "<namespace_name>"
+resource_group_name = "<resource_group_name>"
 
+namespace_name = "<namespace_name>"
+provision_namespace = "<true_or_false>"
+
+package_name = "<package_name>"
