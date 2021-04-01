@@ -27,9 +27,11 @@ variable "namespace_description" {
 variable "resource_group_id" {
   description = "Resource Group ID."
   type        = string
+  default     = ""
 }
 
 variable "provision_namespace" {
   description = "Provision Namespace"
   type        = bool
+  default     = false
 }

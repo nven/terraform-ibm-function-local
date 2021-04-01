@@ -12,15 +12,18 @@ data "ibm_resource_group" "resource_group" {
 module "action" {
   source = "terraform-ibm-modules/function/ibm//modules/action"
 
-  namespace_name = var.namespace_name
-  provision_namespace = true
-  resource_group_id = data.ibm_resource_group.resource_group.id
-  action_name = var.action_name
-  exec = var.exec
-  limits = var.limits
-  publish = var.publish
-  user_defined_annotations = var.user_defined_annotations
-  user_defined_parameters = var.user_defined_parameters
+  action_name               = var.action_name
+  namespace_name            = var.namespace_name
+  resource_group_id         = data.ibm_resource_group.resource_group.id
+  provision_namespace       = var.provision_namespace
+  create_package            = var.create_package
+  package_name              = var.package_name
+  exec                      = var.exec
+  limits                    = var.limits
+  publish                   = var.publish
+  user_defined_annotations  = var.user_defined_annotations
+  user_defined_parameters   = var.user_defined_parameters
+
 }
 ```
 
@@ -30,16 +33,18 @@ module "action" {
 
 | Name                              | Description                                           | Type   | Default | Required |
 |-----------------------------------|-------------------------------------------------------|--------|---------|----------|
-| provision_namespace| Option whether to provision namespace | boolean | n/a | yes |
+| action_name | Name of action. | string | n/a | yes |
 | namespace_name | Namespace to which the rule is attached | string | n/a | yes |
+| provision_namespace| Option whether to provision namespace | boolean | false | no |
 | namespace_description | Namespace Description | string | n/a | no |
-| resource\_group\_id | ID of the resource group | string | n/a | yes |
-| rule_name | The name of rule | string | n/a | yes |
+| create_package | Option whether to create a new package | bool | false | no |
+| package_name | Name of package | string | n/a | no |
+| resource\_group\_id | ID of the resource group | string | n/a | no |
 | exec | Execution Info | list(object{<br>image = string<br>init = string <br>code = string<br>code_path = string<br>kind = string<br>main = string<br>components = list(string)}) | n/a | yes |
 | limits | Action runtime limits | list(object{<br>timeout = number<br>memory = number<br>log_size = number}) | n/a | no |
 | publish | Action visibility | string | n/a | no |
-| user\_defined\_annotations | Annotation values in KEY VALUE format. | string | n/a | no |
-| user\_defined\_parameters | Parameters values in KEY VALUE format. Parameter bindings included in the context passed to the trigger. | string | n/a | no |
+| user\_defined\_annotations | Annotation values in KEY VALUE format. | string | "[]" | no |
+| user\_defined\_parameters | Parameters values in KEY VALUE format. Parameter bindings included in the context passed to the trigger. | string | "[]" | no |
 
 ## exec variable inputs
 

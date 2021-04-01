@@ -3,7 +3,7 @@ locals {
 }
 
 resource "ibm_function_namespace" "function_namespace" {
-  count = provision_namespace ? 1 : 0
+  count = var.provision_namespace ? 1 : 0
   name = var.namespace_name
   description = ( var.namespace_description != null ? var.namespace_description : null )
   resource_group_id = var.resource_group_id
@@ -16,7 +16,7 @@ resource "ibm_function_trigger" "function_trigger" {
     for_each = ( var.feed != null ? var.feed : null )
     content {
       name = feed.value.name
-      parameters = ( feed.value.parameters != null ? feed.value.parameters : "[]" )
+      parameters = ( lookup(feed.value, "parameters", null) != null ? feed.value.parameters : "[]" )
     }
   }
   user_defined_annotations  = ( var.user_defined_annotations != null ? var.user_defined_annotations : "[]")

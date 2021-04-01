@@ -46,21 +46,25 @@ variable "namespace_description" {
 variable "resource_group_id" {
   description = "Resource Group ID."
   type        = string
+  default     = ""
 }
 
 variable "provision_namespace" {
   description = "Provision Namespace"
   type        = bool
+  default     = false
 }
 
 variable "create_package" {
   description = "Option whether to create a new package"
   type        = bool
+  default     = false
 }
 
 variable "package_name" {
   description = "Package Name"
   type        = string
+  default     = null
 }
 
 

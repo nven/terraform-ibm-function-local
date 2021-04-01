@@ -5,10 +5,7 @@ variable "trigger_name" {
 
 variable "feed" {
   description = "Trigger feed"
-  type        = list(object({
-      name = string
-      parameters = string
-  }))
+  type        = list(any)
   default = null
 }
 
@@ -38,9 +35,11 @@ variable "namespace_description" {
 variable "resource_group_id" {
   description = "Resource Group ID."
   type        = string
+  default     = ""
 }
 
 variable "provision_namespace" {
   description = "Provision Namespace"
   type        = bool
+  default     = false
 }
