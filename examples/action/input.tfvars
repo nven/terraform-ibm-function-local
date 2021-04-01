@@ -9,13 +9,13 @@ Example Usage
 action_name = "action-name"
 namespace_name = "function-namespace-name"
 
-// optional variables
-exec = [{
+exec = {
   main = "main"
   kind = "python:3.7"
   code_path = "${path.cwd}/action.zip"
-  },
-]
+}
+
+// optional variables
 
 limits = [{
   timeout = "300000"
@@ -45,12 +45,16 @@ user_defined_annotations = <<EOF
 EOF
 ******************************************************/
 
-action_name = "<action_name>"
-namespace_name = "<namespace_name>"
-provision_namespace = true
-package_name = "<package_name>"
-create_package = true
 
+resource_group_name = "default"
+
+namespace_name = "<namespace_name>"
+provision_namespace = true 
+
+package_name = "<package_name>"
+create_package = true 
+
+action_name = "<action_name>"
 exec = [{
   main = "<name_of_main_function>"
   kind = "<kind>"

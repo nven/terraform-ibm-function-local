@@ -14,7 +14,7 @@ module "action" {
   source = "terraform-ibm-modules/function/ibm//modules/action"
 
   action_name               = var.action_name
-  namespace_name            = var.namespace_namespace
+  namespace_name            = var.namespace_name
   provision_namespace       = var.provision_namespace
   create_package            = var.create_package
   package_name              = var.package_name

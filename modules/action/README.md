@@ -41,6 +41,25 @@ module "action" {
 | user\_defined\_annotations | Annotation values in KEY VALUE format. | string | n/a | no |
 | user\_defined\_parameters | Parameters values in KEY VALUE format. Parameter bindings included in the context passed to the trigger. | string | n/a | no |
 
+## exec variable inputs
+
+| Name                              | Description                                           | Type   | Default | Required |
+|-----------------------------------|-------------------------------------------------------|--------|---------|----------|
+| image| When using the blackbox executable, the name of the container image name. | string | n/a | no |
+| init| When using nodejs, the optional zipfile reference | string | n/a | no |
+| code| When not using the blackbox executable, the code to execute | string | n/a | no |
+| code_path| When not using the blackbox executable, the file path of code to execute and it supports only .zip extension to create the action. | string | n/a | no |
+| kind| The type of action. You can find supported kinds in the [IBM Cloud Functions docs](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-runtimes) | string | n/a | yes |
+| main| The name of the action entry point (function or fully-qualified method name, when applicable). | string | n/a | no |
+| components| The list of fully qualified actions | list(string) | n/a | no |
+
+## limits variable inputs
+
+| Name                              | Description                                           | Type   | Default | Required |
+|-----------------------------------|-------------------------------------------------------|--------|---------|----------|
+| timeout| When using the blackbox executable, the name of the container image name. | number | 60000 | no |
+| memory| When using nodejs, the optional zipfile reference | number | 256 | no |
+| log_size| When not using the blackbox executable, the code to execute | number | 10 | no |
 
 ## Outputs
 

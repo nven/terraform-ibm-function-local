@@ -5,25 +5,13 @@ variable "action_name" {
 
 variable "limits" {
   description = "Action runtime limits"
-  type        = list (object({
-    timeout = number
-    memory = number
-    log_size = number
-  }))
+  type        = list (any)
   default = null
 }
 
 variable "exec" {
   description = "Execution info"
-  type        = list(object({
-    image = string
-    init = string
-    code = string
-    code_path = string
-    kind = string
-    main = string
-    components = list(string)
-  }))
+  type        = list(any)
 }
 
 variable "publish" {
